@@ -1,0 +1,54 @@
+{
+  "prefetchRate": 5,
+  "maxThreads": 1,
+  "disableRoutePrefixing": false,
+  "outputFileRate": 100,
+  "extensions": [
+    ".js",
+    ".jsx"
+  ],
+  "minLoadTime": 200,
+  "disablePreload": false,
+  "disableRuntime": false,
+  "preloadPollInterval": 300,
+  "productionSourceMaps": false,
+  "silent": false,
+  "entry": "index.js",
+  "paths": {
+    "ROOT": "/mnt/c/Users/Usurio/Desktop/repositories/warleon.github.io/Portfolio",
+    "SRC": "/mnt/c/Users/Usurio/Desktop/repositories/warleon.github.io/Portfolio/src",
+    "DIST": "/mnt/c/Users/Usurio/Desktop/repositories/warleon.github.io/Portfolio/dist",
+    "ASSETS": "/mnt/c/Users/Usurio/Desktop/repositories/warleon.github.io/Portfolio/dist",
+    "PLUGINS": "/mnt/c/Users/Usurio/Desktop/repositories/warleon.github.io/Portfolio/plugins",
+    "TEMP": "/mnt/c/Users/Usurio/Desktop/repositories/warleon.github.io/Portfolio/tmp",
+    "ARTIFACTS": "/mnt/c/Users/Usurio/Desktop/repositories/warleon.github.io/Portfolio/artifacts",
+    "PUBLIC": "/mnt/c/Users/Usurio/Desktop/repositories/warleon.github.io/Portfolio/public",
+    "NODE_MODULES": "/mnt/c/Users/Usurio/Desktop/repositories/warleon.github.io/Portfolio/node_modules",
+    "EXCLUDE_MODULES": "/mnt/c/Users/Usurio/Desktop/repositories/warleon.github.io/Portfolio/node_modules",
+    "PACKAGE": "/mnt/c/Users/Usurio/Desktop/repositories/warleon.github.io/Portfolio/package.json",
+    "HTML_TEMPLATE": "/mnt/c/Users/Usurio/Desktop/repositories/warleon.github.io/Portfolio/dist/index.html",
+    "STATIC_DATA": "/mnt/c/Users/Usurio/Desktop/repositories/warleon.github.io/Portfolio/dist/staticData"
+  },
+  "plugins": [
+    "/mnt/c/Users/Usurio/Desktop/repositories/warleon.github.io/Portfolio"
+  ],
+  "siteRoot": "/",
+  "basePath": "",
+  "publicPath": "/",
+  "assetsPath": "",
+  "extractCssChunks": false,
+  "inlineCss": false,
+  "babelExcludes": [],
+  "devServer": {
+    "host": "localhost",
+    "port": 3000
+  },
+  "terser": {
+    "terserOptions": {
+      "mangle": {},
+      "parse": {},
+      "compress": {},
+      "output": {}
+    }
+  }
+}
