@@ -9,6 +9,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 
 import styled from 'styled-components';
 import NormalStyle from './NormalStyle'
+import Section from './Components/section';
 
 library.add(fab)
 
@@ -37,15 +38,13 @@ class App extends Component {
     return (
       <Fragment >
         <GlobalStyle />
-        <Routes>
+        {/* <Routes>
           <Route path="projects/:id" element={ProjectCard} />
-        </Routes>
-        <footer>
-          <section id="footer">
-            <h2 className="major">Get in touch</h2>
-            <GetInTouch></GetInTouch>
-          </section >
-        </footer>
+        </Routes> */}
+        <Section title="my projects" id=""></Section>
+        <Section title="get in touch" id="">
+          <GetInTouch></GetInTouch>
+        </Section>
       </Fragment>
     )
   }

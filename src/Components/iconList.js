@@ -29,8 +29,8 @@ export default function IconList(props) {
 			{
 				props.items.map((item, i) => (
 					<Item key={i}>
-						<FontAwesomeIcon icon={item.icon} />
-						<Link href={item.url}>{item.text}</Link>
+						<Link href={item.url}><FontAwesomeIcon icon={item.icon} /></Link>
+						<Link href={item.url} target="_blank">{item.text}</Link>
 					</Item>
 				)
 				)
