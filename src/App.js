@@ -42,6 +42,7 @@ class App extends Component {
         </Routes>
         <footer>
           <section id="footer">
+            <h2 className="major">Get in touch</h2>
             <GetInTouch></GetInTouch>
           </section >
         </footer>

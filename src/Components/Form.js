@@ -48,6 +48,10 @@ const Fields = styled.div`
 
 
 const StyledForm = styled.form`
+	@media screen and (min-width: 720px) {
+		width:70%;
+		
+	}
 `
 
 

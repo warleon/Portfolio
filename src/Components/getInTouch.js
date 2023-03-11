@@ -1,7 +1,12 @@
 import React from 'react';
+import styled from 'styled-components';
 import Form from './Form';
 import IconList from './iconList';
 
+const Wrapper = styled.div`
+	display:flex;
+	flex-wrap:wrap;
+`
 
 export default function GetInTouch(props) {
 	const formProps = {
@@ -28,23 +33,43 @@ export default function GetInTouch(props) {
 		]
 	}
 	const contactListProps = {
-		items: [{
-			icon: "fa-brands fa-github",
-			url: "https://github.com/warleon",
-			text: "warleon"
-		}]
+		items: [
+			{
+				icon: "fa-brands fa-github",
+				url: "https://github.com/warleon",
+				text: "warleon"
+			},
+			{
+				icon: "fa-brands fa-github",
+				url: "https://github.com/warleon",
+				text: "warleon"
+			},
+			{
+				icon: "fa-brands fa-github",
+				url: "https://github.com/warleon",
+				text: "warleon"
+			},
+			{
+				icon: "fa-brands fa-github",
+				url: "https://github.com/warleon",
+				text: "warleon"
+			},
+			{
+				icon: "fa-brands fa-github",
+				url: "https://github.com/warleon",
+				text: "warleon"
+			},
+			{
+				icon: "fa-brands fa-github",
+				url: "https://github.com/warleon",
+				text: "warleon"
+			},
+		]
 	}
 	return (
-		<div className="inner">
-			<h2 className="major">Get in touch</h2>
+		<Wrapper>
 			<Form {...formProps} />
 			<IconList {...contactListProps} />
-			{/* <ul className="contact">
-				<li className="icon brands fa-github">
-					<a href="https://github.com/warleon">warleon</a>
-				</li>
-			</ul> */}
-
-		</div>
+		</Wrapper>
 	);
 }

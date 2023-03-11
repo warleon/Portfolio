@@ -5,14 +5,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 const List = styled.ul`
-list-style-type: none;
+	list-style-type: none;
+	padding: 0 1.5em 0 1.5em;
+	width: calc(100% - 3em);
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction:column;
+	flex-shrink: 1;
+	width: auto;
 `
 
 const Item = styled.li`
-display:flex;
+	padding: 1em 0;
 `
 
 const Link = styled.a`
+	padding: 0 0 0 1em;
 `
 
 export default function IconList(props) {
