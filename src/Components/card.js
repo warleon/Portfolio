@@ -4,7 +4,8 @@ import styled from 'styled-components';
 
 const Title = styled.h3`
 	padding-bottom: 1em;
-	border-bottom: solid 2px rgba(255, 255, 255, 0.125);
+	margin: 0 1em ;
+	border-bottom: solid 2px  rgb(133, 133, 133);
 	text-transform: uppercase;
 `
 
@@ -14,8 +15,6 @@ const Image = styled.a`
 		border-radius: 5px 5px 0 0;
     width: 100%;
 		aspect-ratio: 16 / 9;
-		min-width: 240px;
-		max-width: 320px;
 	}
 `
 
@@ -24,13 +23,20 @@ const CallToAction = styled.span`
 	text-transform: uppercase;
 `
 const Content = styled.p`
-	margin: 1em 0;
+	margin: 1em ;
+	height: 6em;
 `
 
 const BottomLink = styled.a`
-	margin-bottom: 1em;
+	display: block;
+	margin: 0 1em 1em 1em;
 `
 const Container = styled.div`
+	max-width: 320px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	border: 2px solid rgb(133, 133, 133);
+	background: rgba(255,255,255,0.025);
 `
 
 export default function Card(props) {
