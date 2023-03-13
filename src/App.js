@@ -32,6 +32,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 `
+function createMapping(obj, func) {
+  let arr = Array()
+  let i = 0
+  for (const [key, value] of Object.entries(obj)) {
+    arr.push(func(key, value, i))
+    i++
+  }
+  return arr
+}
 
 class App extends Component {
   constructor() {
@@ -44,17 +53,17 @@ class App extends Component {
     return (
       <Fragment >
         <GlobalStyle />
-        {/* <Routes>
-          <Route path="projects/:id" element={ProjectCard} />
-        </Routes> */}
         <Section title="my projects" id="">
           <Roulette>
             {
-              projects.map((card, i) => (
+              createMapping(projects, (id, card, i) => (
                 <Card {...card} key={i} />
               ))
             }
           </Roulette>
+          <Routes>
+            <Route path="projects/:id" element={ProjectCard} />
+          </Routes>
         </Section>
         <Section title="get in touch" id="">
           <GetInTouch></GetInTouch>

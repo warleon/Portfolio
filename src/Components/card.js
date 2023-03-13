@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Title = styled.h3`
 	padding-bottom: 1em;
@@ -9,7 +10,7 @@ const Title = styled.h3`
 	text-transform: uppercase;
 `
 
-const Image = styled.a`
+const Image = styled.div`
 	margin-bottom: 1.5em;
 	img {
 		border-radius: 5px 5px 0 0;
@@ -28,12 +29,12 @@ const Content = styled.p`
 	height: 6em;
 `
 
-const BottomLink = styled.a`
+const BottomLink = styled.div`
 	display: block;
 	margin: 0 1em 1em 1em;
 `
 const Container = styled.div`
-	max-width: 240px;
+	min-width: 240px;
 	max-width: 320px;
 	box-sizing: border-box;
 	border-radius: 5px;
@@ -45,13 +46,19 @@ export default function Card(props) {
 
 	return (
 		<Container>
-			<Image href={props.url} ><img src={props.img} alt={props.imgtext} /></Image>
+			<Link to={props.url}>
+				<Image >
+					<img src={props.img} alt={props.imgtext} />
+				</Image>
+			</Link>
 			<Title>{props.title}</Title>
 			<Content>{props.description}</Content>
-			<BottomLink href={props.url} >
-				<FontAwesomeIcon icon="fa-solid fa-greater-than" />
-				<CallToAction>{props.call}</CallToAction>
-			</BottomLink>
+			<Link to={props.url}>
+				<BottomLink  >
+					<FontAwesomeIcon icon="fa-solid fa-greater-than" />
+					<CallToAction>{props.call}</CallToAction>
+				</BottomLink>
+			</Link>
 		</Container>
 	);
 }
