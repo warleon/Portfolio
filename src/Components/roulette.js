@@ -8,6 +8,8 @@ const Wrapper = styled.div`
 	grid-auto-columns: max-content;
 	overflow-x: auto;
 	scroll-snap-type: inline mandatory;
+	gap: 5px;
+	padding: 0 5px;
 `
 const Item = styled.div`
 `
@@ -22,7 +24,6 @@ function Roulette(props) {
 		let currScroll = wrapper.current.scrollLeft
 		let diff = currScroll - scroll
 		if (diff > 0) {
-			// console.log([scroll, currScroll, diff, width, "scrolling right"])
 			if (currScroll >= width - dist && !changed) {
 				wrapper.current.scrollLeft = dist
 				changed = true;
@@ -30,7 +31,6 @@ function Roulette(props) {
 				changed = false;
 		}
 		if (diff < 0) {
-			// console.log([scroll, currScroll, diff, width, "scrolling left"])
 			if (currScroll <= dist && !changed) {
 				wrapper.current.scrollLeft = width - dist
 				changed = true;

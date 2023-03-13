@@ -1,19 +1,16 @@
 import React, { Component, Fragment } from 'react'
-import GetInTouch from './Components/getInTouch'
-import ProjectCard from './Components/card';
-import { Routes, Route } from 'react-router-dom'
-import placeholder from './Assets/placeholderImg.jpg'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-
+import { fas } from '@fortawesome/free-solid-svg-icons';
 
 import styled from 'styled-components';
 import NormalStyle from './NormalStyle'
 import Section from './Components/section';
 import Card from './Components/card';
-import { fas } from '@fortawesome/free-solid-svg-icons';
 import Roulette from './Components/roulette';
+import GetInTouch from './Components/getInTouch'
+import projects from './data/projects';
 
 library.add(fab, fas)
 
@@ -37,66 +34,13 @@ h1, h2, h3, h4, h5, h6 {
 `
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      project: projects[0]
+    }
+  }
   render() {
-    const projects = [
-      {
-        url: "",
-        img: placeholder,
-        imgText: "",
-        title: "video app",
-        description: "A containerized video app made using django and ffmpeg.",
-        call: "learn more"
-      },
-      {
-        url: "",
-        img: placeholder,
-        imgText: "",
-        title: "video app",
-        description: "A containerized video app made using django and ffmpeg.",
-        call: "learn more"
-      },
-      {
-        url: "",
-        img: placeholder,
-        imgText: "",
-        title: "video app",
-        description: "A containerized video app made using django and ffmpeg.",
-        call: "learn more"
-      },
-      {
-        url: "",
-        img: placeholder,
-        imgText: "",
-        title: "video app",
-        description: "A containerized video app made using django and ffmpeg.",
-        call: "learn more"
-      },
-      {
-        url: "",
-        img: placeholder,
-        imgText: "",
-        title: "video app",
-        description: "A containerized video app made using django and ffmpeg.",
-        call: "learn more"
-      },
-      {
-        url: "",
-        img: placeholder,
-        imgText: "",
-        title: "video app",
-        description: "A containerized video app made using django and ffmpeg.",
-        call: "learn more"
-      },
-      {
-        url: "",
-        img: placeholder,
-        imgText: "",
-        title: "video app",
-        description: "A containerized video app made using django and ffmpeg.",
-        call: "learn more"
-      },
-    ]
-
     return (
       <Fragment >
         <GlobalStyle />
