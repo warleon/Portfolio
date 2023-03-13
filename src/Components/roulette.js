@@ -9,11 +9,7 @@ const Wrapper = styled.div`
 	overflow-x: auto;
 	scroll-snap-type: inline mandatory;
 `
-const ItemStart = styled.div`
-	scroll-snap-align:start;
-`
-const ItemEnd = styled.div`
-	scroll-snap-align:end;
+const Item = styled.div`
 `
 
 function Roulette(props) {
@@ -28,7 +24,7 @@ function Roulette(props) {
 		if (diff > 0) {
 			// console.log([scroll, currScroll, diff, width, "scrolling right"])
 			if (currScroll >= width - dist && !changed) {
-				wrapper.current.scrollLeft = 0
+				wrapper.current.scrollLeft = dist
 				changed = true;
 			} else
 				changed = false;
@@ -36,7 +32,7 @@ function Roulette(props) {
 		if (diff < 0) {
 			// console.log([scroll, currScroll, diff, width, "scrolling left"])
 			if (currScroll <= dist && !changed) {
-				wrapper.current.scrollLeft = width
+				wrapper.current.scrollLeft = width - dist
 				changed = true;
 			} else
 				changed = false;
@@ -46,13 +42,9 @@ function Roulette(props) {
 	return (
 		<Wrapper {...props} ref={wrapper} onScroll={handleScroll}>
 			{props.children.map((child, i) => {
-				if (i == props.children.length - 1)
-					return <ItemEnd key={i} >
-						{child}
-					</ItemEnd>
-				return <ItemStart key={i}>
+				return <Item key={i}>
 					{child}
-				</ItemStart>
+				</Item>
 			}
 			)}
 		</Wrapper >
