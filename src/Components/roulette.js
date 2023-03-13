@@ -26,7 +26,7 @@ function Roulette(props) {
 		let currScroll = wrapper.current.scrollLeft
 		let diff = currScroll - scroll
 		if (diff > 0) {
-			console.log([scroll, currScroll, diff, width, "scrolling right"])
+			// console.log([scroll, currScroll, diff, width, "scrolling right"])
 			if (currScroll >= width - dist && !changed) {
 				wrapper.current.scrollLeft = 0
 				changed = true;
@@ -34,7 +34,7 @@ function Roulette(props) {
 				changed = false;
 		}
 		if (diff < 0) {
-			console.log([scroll, currScroll, diff, width, "scrolling left"])
+			// console.log([scroll, currScroll, diff, width, "scrolling left"])
 			if (currScroll <= dist && !changed) {
 				wrapper.current.scrollLeft = width
 				changed = true;
