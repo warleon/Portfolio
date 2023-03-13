@@ -13,6 +13,7 @@ import NormalStyle from './NormalStyle'
 import Section from './Components/section';
 import Card from './Components/card';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+import Roulette from './Components/roulette';
 
 library.add(fab, fas)
 
@@ -46,6 +47,54 @@ class App extends Component {
         description: "A containerized video app made using django and ffmpeg.",
         call: "learn more"
       },
+      {
+        url: "",
+        img: placeholder,
+        imgText: "",
+        title: "video app",
+        description: "A containerized video app made using django and ffmpeg.",
+        call: "learn more"
+      },
+      {
+        url: "",
+        img: placeholder,
+        imgText: "",
+        title: "video app",
+        description: "A containerized video app made using django and ffmpeg.",
+        call: "learn more"
+      },
+      {
+        url: "",
+        img: placeholder,
+        imgText: "",
+        title: "video app",
+        description: "A containerized video app made using django and ffmpeg.",
+        call: "learn more"
+      },
+      {
+        url: "",
+        img: placeholder,
+        imgText: "",
+        title: "video app",
+        description: "A containerized video app made using django and ffmpeg.",
+        call: "learn more"
+      },
+      {
+        url: "",
+        img: placeholder,
+        imgText: "",
+        title: "video app",
+        description: "A containerized video app made using django and ffmpeg.",
+        call: "learn more"
+      },
+      {
+        url: "",
+        img: placeholder,
+        imgText: "",
+        title: "video app",
+        description: "A containerized video app made using django and ffmpeg.",
+        call: "learn more"
+      },
     ]
 
     return (
@@ -55,7 +104,13 @@ class App extends Component {
           <Route path="projects/:id" element={ProjectCard} />
         </Routes> */}
         <Section title="my projects" id="">
-          <Card {...projects[0]} />
+          <Roulette>
+            {
+              projects.map((card, i) => (
+                <Card {...card} key={i} />
+              ))
+            }
+          </Roulette>
         </Section>
         <Section title="get in touch" id="">
           <GetInTouch></GetInTouch>

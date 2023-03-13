@@ -15,6 +15,7 @@ const Image = styled.a`
 		border-radius: 5px 5px 0 0;
     width: 100%;
 		aspect-ratio: 16 / 9;
+		object-fit:cover;
 	}
 `
 
@@ -32,6 +33,7 @@ const BottomLink = styled.a`
 	margin: 0 1em 1em 1em;
 `
 const Container = styled.div`
+	max-width: 240px;
 	max-width: 320px;
 	box-sizing: border-box;
 	border-radius: 5px;
