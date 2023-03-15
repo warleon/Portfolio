@@ -14,6 +14,9 @@ import GetInTouch from './Components/getInTouch'
 import projects from './data/projects';
 import Showcase from './Components/showcase';
 
+import video from './Assets/berserk.webm'
+import BackgroundVideo from './Components/backgroundVIdeo';
+
 library.add(fab, fas)
 
 const GlobalStyle = styled(NormalStyle)`
@@ -48,6 +51,9 @@ function createMapping(obj, func) {
 const Wrapper = styled.div`
  padding: 0 1.5em;
 `
+
+
+
 class App extends Component {
   constructor() {
     super()
@@ -74,6 +80,9 @@ class App extends Component {
             </Routes>
           </Section>
           <Section title="get in touch" id="">
+            <BackgroundVideo playsInline autoPlay muted loop>
+              <source src={video} type="video/webm" />
+            </BackgroundVideo>
             <GetInTouch></GetInTouch>
           </Section>
         </Wrapper>

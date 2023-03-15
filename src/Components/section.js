@@ -5,6 +5,9 @@ import styled, { css } from 'styled-components';
 
 
 const StyledSection = styled.section`
+  position:relative;
+  padding:0 0 2em 0;
+  margin:0;
 `
 const Title = styled.h2`
 	padding-bottom: 1em;
