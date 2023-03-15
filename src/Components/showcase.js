@@ -7,18 +7,17 @@ import projects from '../data/projects';
 
 const Title = styled.h2`
 	padding-bottom: 1em;
-	margin: 0 1em ;
 	border-bottom: solid 2px  rgb(133, 133, 133);
 	text-transform: uppercase;
 `
 const Subtitle = styled.h3`
 	padding-bottom: 1em;
-	margin: 0 1em ;
 	border-bottom: solid 2px  rgb(133, 133, 133);
 	text-transform: uppercase;
 `
 
 const Line = styled.p`
+padding-left: 1em; 
 `
 
 const Section = styled.div`

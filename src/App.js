@@ -44,6 +44,10 @@ function createMapping(obj, func) {
   return arr
 }
 
+
+const Wrapper = styled.div`
+ padding: 0 1.5em;
+`
 class App extends Component {
   constructor() {
     super()
@@ -51,25 +55,28 @@ class App extends Component {
       project: projects[0]
     }
   }
+
   render() {
     return (
       <Fragment >
         <GlobalStyle />
-        <Section title="my projects" id="">
-          <Roulette>
-            {
-              createMapping(projects, (id, card, i) => (
-                <Card {...card} key={i} />
-              ))
-            }
-          </Roulette>
-          <Routes>
-            <Route path="projects/:projectId" element={<Showcase />} />
-          </Routes>
-        </Section>
-        <Section title="get in touch" id="">
-          <GetInTouch></GetInTouch>
-        </Section>
+        <Wrapper>
+          <Section title="my projects" id="">
+            <Roulette>
+              {
+                createMapping(projects, (id, card, i) => (
+                  <Card {...card} key={i} />
+                ))
+              }
+            </Roulette>
+            <Routes>
+              <Route path="projects/:projectId" element={<Showcase />} />
+            </Routes>
+          </Section>
+          <Section title="get in touch" id="">
+            <GetInTouch></GetInTouch>
+          </Section>
+        </Wrapper>
       </Fragment>
     )
   }
