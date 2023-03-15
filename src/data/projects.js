@@ -93,7 +93,7 @@ const projects = {
     call: "learn more",
     motivation: "My previus portfolio site was written in html, js and css and was a big mess. With my knew knowledge I wanted remake it using react",
     longDescription: "An static site builded with react-static and other extensions",
-    usage: "After compilation all the site is contained in static js, html and css files and only needs to be server like a regular static site",
+    usage: "After compilation all the site is contained in static js, html and css files and only needs to be serve like a regular static site",
     source: ["https://github.com/warleon/Portfolio", "warleon/Portfolio"],
     tech: [
       "Nodejs",

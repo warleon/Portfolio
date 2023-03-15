@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react'
+import { Route, Routes } from 'react-router-dom';
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
@@ -11,6 +12,7 @@ import Card from './Components/card';
 import Roulette from './Components/roulette';
 import GetInTouch from './Components/getInTouch'
 import projects from './data/projects';
+import Showcase from './Components/showcase';
 
 library.add(fab, fas)
 
@@ -62,7 +64,7 @@ class App extends Component {
             }
           </Roulette>
           <Routes>
-            <Route path="projects/:id" element={ProjectCard} />
+            <Route path="projects/:projectId" element={<Showcase />} />
           </Routes>
         </Section>
         <Section title="get in touch" id="">
