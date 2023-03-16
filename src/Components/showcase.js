@@ -6,28 +6,36 @@ import Card from './card';
 import projects from '../data/projects';
 
 const Title = styled.h2`
+	--text-color :${({ darkmode, colorPalette: { dark, bright } }) => darkmode ? bright : dark};
 	padding-bottom: 1em;
-	border-bottom: solid 2px  rgb(133, 133, 133);
+	border-bottom: solid 2px  var(--text-color);
 	text-transform: uppercase;
 `
 const Subtitle = styled.h3`
+	--text-color :${({ darkmode, colorPalette: { dark, bright } }) => darkmode ? bright : dark};
 	padding-bottom: 1em;
-	border-bottom: solid 2px  rgb(133, 133, 133);
+	border-bottom: solid 2px  var(--text-color);
 	text-transform: uppercase;
 `
 
 const Line = styled.p`
-padding-left: 1em; 
 `
 
 const Section = styled.div`
 `
 
-const Wrapper = styled.div`
-`
 const CallToAction = styled.span`
+	--text-color :${({ colorPalette: { action } }) => action};
+	color:var(--text-color);
 	margin-left:1em;
 	text-transform: uppercase;
+`
+const Wrapper = styled.div`
+	--bg-color :${({ colorPalette }) => colorPalette.neutral}75;
+	--text-color :${({ darkmode, colorPalette: { dark, bright } }) => darkmode ? bright : dark};
+
+	color:var(--text-color);
+	background: var(--bg-color);
 `
 
 export default function Showcase(props) {
@@ -35,17 +43,17 @@ export default function Showcase(props) {
 	let { projectId } = useParams()
 	let project = projects[projectId]
 	return (
-		<Wrapper>
+		<Wrapper colorPalette={props.colorPalette} darkmode={props.darkmode}>
 			<Section>
-				<Title>{project.title}</Title>
+				<Title colorPalette={props.colorPalette} darkmode={props.darkmode}>{project.title}</Title>
 				<Line>{project.longDescription}</Line>
 			</Section>
 			<Section>
-				<Subtitle>motivation</Subtitle>
+				<Subtitle colorPalette={props.colorPalette} darkmode={props.darkmode}>motivation</Subtitle>
 				<Line>{project.motivation}</Line>
 			</Section>
 			<Section>
-				<Subtitle>usage</Subtitle>
+				<Subtitle colorPalette={props.colorPalette} darkmode={props.darkmode}>usage</Subtitle>
 				{
 					project.usage.split("\n").map((line, i) => (
 						<Line key={i}>{line}</Line>
@@ -53,7 +61,7 @@ export default function Showcase(props) {
 				}
 			</Section>
 			<Section>
-				<Subtitle>TECHNOLOGIES</Subtitle>
+				<Subtitle colorPalette={props.colorPalette} darkmode={props.darkmode}>TECHNOLOGIES</Subtitle>
 				<table>
 					<tbody>
 						{
@@ -65,10 +73,10 @@ export default function Showcase(props) {
 				</table>
 			</Section>
 			<Section>
-				<Subtitle>source code</Subtitle>
+				<Subtitle colorPalette={props.colorPalette} darkmode={props.darkmode}>source code</Subtitle>
 				<Link to={project.source[0]} >
-					<FontAwesomeIcon icon="fa-brands fa-github" />
-					<CallToAction>{project.source[1]}</CallToAction>
+					<FontAwesomeIcon icon="fa-brands fa-github" style={{ color: props.colorPalette.action }} />
+					<CallToAction colorPalette={props.colorPalette}>{project.source[1]}</CallToAction>
 				</Link>
 			</Section>
 		</Wrapper>

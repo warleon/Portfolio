@@ -16,6 +16,7 @@ import Showcase from './Components/showcase';
 
 import video from './Assets/berserk.webm'
 import BackgroundVideo from './Components/backgroundVIdeo';
+import ColorPalettes from './Assets/colorPalette';
 
 library.add(fab, fas)
 
@@ -58,7 +59,8 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      project: projects[0]
+      darkmode: false,
+      colorPalette: ColorPalettes[0]
     }
   }
 
@@ -71,12 +73,12 @@ class App extends Component {
             <Roulette>
               {
                 createMapping(projects, (id, card, i) => (
-                  <Card {...card} key={i} />
+                  <Card {...card} key={i} {...this.state} />
                 ))
               }
             </Roulette>
             <Routes>
-              <Route path="projects/:projectId" element={<Showcase />} />
+              <Route path="projects/:projectId" element={<Showcase {...this.state} />} />
             </Routes>
           </Section>
           <Section title="get in touch" id="">

@@ -4,9 +4,10 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const Title = styled.h3`
+	--text-color :${({ darkmode, colorPalette: { dark, bright } }) => darkmode ? bright : dark};
 	padding-bottom: 1em;
 	margin: 0 1em ;
-	border-bottom: solid 2px  rgb(133, 133, 133);
+	border-bottom: solid 2px var(--text-color);
 	text-transform: uppercase;
 `
 
@@ -30,31 +31,36 @@ const Content = styled.p`
 `
 
 const BottomLink = styled.div`
+	--text-color :${({ colorPalette: { action } }) => action};
 	display: block;
 	margin: 0 1em 1em 1em;
+	color:var(--text-color);
 `
 const Container = styled.div`
-	min-width: 240px;
-	max-width: 320px;
+	--bg-color :${({ colorPalette }) => colorPalette.neutral}75;
+	--text-color :${({ darkmode, colorPalette: { dark, bright } }) => darkmode ? bright : dark};
+
+	width:20em;
 	box-sizing: border-box;
 	border-radius: 5px;
-	border: 2px solid rgb(133, 133, 133);
-	background: rgba(255,255,255,0.025);
+	border: 2px solid var(--text-color);
+	color:var(--text-color);
+	background: var(--bg-color);
 `
 
 export default function Card(props) {
 
 	return (
-		<Container>
+		<Container colorPalette={props.colorPalette} darkmode={props.darkmode}>
 			<Link to={props.url}>
 				<Image >
 					<img src={props.img} alt={props.imgtext} />
 				</Image>
 			</Link>
-			<Title>{props.title}</Title>
+			<Title colorPalette={props.colorPalette} darkmode={props.darkmode}>{props.title}</Title>
 			<Content>{props.description}</Content>
 			<Link to={props.url}>
-				<BottomLink  >
+				<BottomLink colorPalette={props.colorPalette}>
 					<FontAwesomeIcon icon="fa-solid fa-greater-than" />
 					<CallToAction>{props.call}</CallToAction>
 				</BottomLink>
