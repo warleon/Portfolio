@@ -55,7 +55,7 @@ export default function Card(props) {
 			<Content>{props.description}</Content>
 			<Link to={props.url}>
 				<BottomLink >
-					<FontAwesomeIcon icon="fa-solid fa-greater-than" />
+					<FontAwesomeIcon icon="fas fa-chevron-circle-right" />
 					<CallToAction>{props.call}</CallToAction>
 				</BottomLink>
 			</Link>

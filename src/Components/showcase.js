@@ -51,6 +51,12 @@ const Wrapper = styled.div`
 	color:var(--text-color);
 `
 
+const Icon = styled.span`
+	margin:0 1em 0 0;
+	--text-color :${({ theme: { action } }) => action};
+	color:var(--text-color);
+`
+
 export default function Showcase(props) {
 
 	let { projectId } = useParams()
@@ -79,7 +85,12 @@ export default function Showcase(props) {
 					<tbody>
 						{
 							project.tech.map((line, i) => (
-								<tr key={i}><td>{line}</td></tr>
+								<tr key={i}><td>
+									<Icon>
+										<FontAwesomeIcon icon="fas fa-bookmark" />
+									</Icon>
+									{line}
+								</td></tr>
 							))
 						}
 					</tbody>

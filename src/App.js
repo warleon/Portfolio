@@ -34,24 +34,7 @@ const GlobalStyle = styled(NormalStyle)`
   border: 0;
   font-size: 12pt;
 	color: var(--text-color);
-
-  ::-webkit-scrollbar{
-    width: 10px;
-    height: 10px;
-  }
-  ::-webkit-scrollbar-track {
-    background-color:var(--bg-color);
-    padding:10px
-  }
-  ::-webkit-scrollbar-thumb {
-    background: var(--neutral-color); 
-    border-radius:5px;
-  ::-webkit-scrollbar-thumb:hover {
-  background: var(--text-color); 
-  } 
 }
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-family: Raleway, Helvetica, sans - serif;
   font-weight: 700;
@@ -59,6 +42,22 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 1em 0;
   text-transform: uppercase;
 }
+
+&::-webkit-scrollbar{
+  width: 10px;
+  height: 10px;
+}
+&::-webkit-scrollbar-track {
+  background-color:var(--bg-color);
+  padding:10px
+}
+&::-webkit-scrollbar-thumb {
+  background: var(--neutral-color); 
+  border-radius:5px;
+}
+&::-webkit-scrollbar-thumb:hover {
+background: var(--text-color); 
+} 
 
 `
 function createMapping(obj, func) {
