@@ -4,23 +4,26 @@ import styled, { css } from 'styled-components';
 
 
 const InputBox = css`
+	--text-color :${({ theme: { text } }) => text};
+	--bg-color :${({ theme: { neutral } }) => neutral}75;
 	box-sizing: border-box;
 	display: block;
 	padding: 0 1em;
 	width: 100%;
 	border-radius: 5px;
-	background: rgba(255, 255, 255, 0.025);
+	border-color:var(--text-color);
+	background: var(--bg-color);
 	flex-grow:1;
 	border-width: 2px;
 `
 
 const Input = styled.input`
-	${InputBox}
+	${InputBox};
 	height: 2.75em;
 `
 
 const TextArea = styled.textarea`
-	${InputBox}
+	${InputBox};
 `
 const Label = styled.label`
 	display: block;
@@ -48,6 +51,8 @@ const Fields = styled.div`
 
 
 const StyledForm = styled.form`
+	--text-color :${({ theme: { text } }) => text};
+	color: var(--text-color);
 	@media screen and (min-width: 720px) {
 		width:70%;
 		
@@ -58,15 +63,15 @@ const StyledForm = styled.form`
 export default function Form(props) {
 
 	return (
-		<StyledForm method={props.method} action={props.action}>
+		<StyledForm method={props.method} action={props.action} >
 			<Fields >
 				{props.fields.map(
 					(field, i) => (
 						<Field key={i}>
 							<Label htmlFor={field.name}>{field.name}</Label>
 							{field.textArea ?
-								<TextArea id={field.name} required={field.required} rows={field.rows}></TextArea>
-								: <Input type={field.type} id={field.name} required={field.required}></Input>
+								<TextArea id={field.name} required={field.required} rows={field.rows} />
+								: <Input type={field.type} id={field.name} required={field.required} ></Input>
 							}
 						</Field>
 					)

@@ -5,7 +5,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons';
 
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import NormalStyle from './NormalStyle'
 import Section from './Components/section';
 import Card from './Components/card';
@@ -26,15 +26,15 @@ const GlobalStyle = styled(NormalStyle)`
   padding: 0;
   border: 0;
   font-size: 12pt;
-	color: #${props => props.dark ? "ffffff" : "000000"};
+	color: #${({ theme: { text } }) => text};
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Raleway, Helvetica, sans-serif;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    margin: 0 0 1em 0;
-    text-transform: uppercase;
+  font-family: Raleway, Helvetica, sans - serif;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin: 0 0 1em 0;
+  text-transform: uppercase;
 }
 
 `
@@ -50,7 +50,7 @@ function createMapping(obj, func) {
 
 
 const Wrapper = styled.div`
- padding: 0 1.5em;
+padding: 0 1.5em;
 `
 
 
@@ -59,35 +59,37 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      darkmode: false,
-      colorPalette: ColorPalettes[0]
+      colorPalette: ColorPalettes[0],
     }
   }
 
   render() {
     return (
       <Fragment >
-        <GlobalStyle />
-        <Wrapper>
-          <Section title="my projects" id="">
-            <Roulette>
-              {
-                createMapping(projects, (id, card, i) => (
-                  <Card {...card} key={i} {...this.state} />
-                ))
-              }
-            </Roulette>
-            <Routes>
-              <Route path="projects/:projectId" element={<Showcase {...this.state} />} />
-            </Routes>
-          </Section>
-          <Section title="get in touch" id="">
-            <BackgroundVideo playsInline autoPlay muted loop>
-              <source src={video} type="video/webm" />
-            </BackgroundVideo>
-            <GetInTouch></GetInTouch>
-          </Section>
-        </Wrapper>
+        <ThemeProvider theme={this.state.colorPalette}>
+          <GlobalStyle />
+
+          <Wrapper>
+            <Section title="my projects" id="">
+              <Roulette>
+                {
+                  createMapping(projects, (id, card, i) => (
+                    <Card {...card} key={i} />
+                  ))
+                }
+              </Roulette>
+              <Routes>
+                <Route path="projects/:projectId" element={<Showcase />} />
+              </Routes>
+            </Section>
+            <Section title="get in touch" id="">
+              <BackgroundVideo playsInline autoPlay muted loop>
+                <source src={video} type="video/webm" />
+              </BackgroundVideo>
+              <GetInTouch ></GetInTouch>
+            </Section>
+          </Wrapper>
+        </ThemeProvider>
       </Fragment>
     )
   }
