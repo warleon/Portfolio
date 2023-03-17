@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from 'react-router-dom';
 
 
 
@@ -16,11 +17,23 @@ const List = styled.ul`
 `
 
 const Item = styled.li`
+	--text-color :${({ theme: { text } }) => text};
+	color:var(--text-color);
 	padding: 1em 0;
 `
 
-const Link = styled.a`
+const Spaced = styled.p`
+	--text-color :${({ theme: { text } }) => text};
+	color:var(--text-color);
 	padding: 0 0 0 1em;
+	margin: 0;
+`
+
+const Span = styled.span`
+	--text-color :${({ theme: { text } }) => text};
+	color:var(--text-color);
+	display:flex;
+	flex-wrap:nowrap;
 `
 
 export default function IconList(props) {
@@ -29,8 +42,12 @@ export default function IconList(props) {
 			{
 				props.items.map((item, i) => (
 					<Item key={i}>
-						<Link href={item.url}><FontAwesomeIcon icon={item.icon} /></Link>
-						<Link href={item.url} target="_blank">{item.text}</Link>
+						<Link to={item.url} target="_blank">
+							<Span>
+								<FontAwesomeIcon icon={item.icon} />
+								<Spaced >{item.text}</Spaced>
+							</Span>
+						</Link>
 					</Item>
 				)
 				)

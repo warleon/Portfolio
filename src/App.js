@@ -82,7 +82,7 @@ class App extends Component {
                 <Route path="projects/:projectId" element={<Showcase />} />
               </Routes>
             </Section>
-            <Section title="get in touch" id="">
+            <Section title="contact me" id="">
               <BackgroundVideo playsInline autoPlay muted loop>
                 <source src={video} type="video/webm" />
               </BackgroundVideo>

@@ -15,6 +15,7 @@ const InputBox = css`
 	background: var(--bg-color);
 	flex-grow:1;
 	border-width: 2px;
+	color:var(--text-color)
 `
 
 const Input = styled.input`
@@ -24,6 +25,7 @@ const Input = styled.input`
 
 const TextArea = styled.textarea`
 	${InputBox};
+	resize: vertical;
 `
 const Label = styled.label`
 	display: block;
@@ -35,12 +37,14 @@ const Label = styled.label`
 	text-transform: uppercase;
 `
 const Field = styled.div`
+	--text-color :${({ theme: { text } }) => text};
 	width: 100% ;
 	flex-grow: 0;
 	flex-shrink: 0;
 	display:flex;
 	flex-direction:column;
-	padding-top: 1.5em
+	padding-top: 1.5em;
+	color:var(--text-color)
 `
 const Fields = styled.div`
 	padding: 0 1.5em 0 1.5em;
