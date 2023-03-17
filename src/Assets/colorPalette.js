@@ -7,11 +7,11 @@ const ColorPalettes = [
 		attention: "",
 	},
 	{
-		background: "",
-		text: "",
-		action: "",
-		attention: "",
-		neutral: "",
+		background: "white",
+		text: "black",
+		action: "#920632", //rojo oscuro
+		attention: "#BDD178",//verde claro
+		neutral: "grey",
 	}
 ]
 export default ColorPalettes

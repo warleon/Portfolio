@@ -30,7 +30,7 @@ const Spaced = styled.p`
 `
 
 const Span = styled.span`
-	--text-color :${({ theme: { text } }) => text};
+	--text-color :${({ theme: { action } }) => action};
 	color:var(--text-color);
 	display:flex;
 	flex-wrap:nowrap;

@@ -2,14 +2,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import Title from './title';
 
-const Title = styled.h3`
-	--text-color :${({ theme: { text } }) => text};
-	padding-bottom: 1em;
-	margin: 0 1em ;
-	border-bottom: solid 2px var(--text-color);
-	text-transform: uppercase;
-`
 
 const Image = styled.div`
 	margin-bottom: 1.5em;

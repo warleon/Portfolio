@@ -4,18 +4,25 @@ import styled from 'styled-components';
 import { Link, useParams } from 'react-router-dom';
 import Card from './card';
 import projects from '../data/projects';
+import Title from './title'
 
-const Title = styled.h2`
-	--text-color :${({ theme: { text } }) => text};
-	padding-bottom: 1em;
-	border-bottom: solid 2px  var(--text-color);
-	text-transform: uppercase;
-`
 const Subtitle = styled.h3`
 	--text-color :${({ theme: { text } }) => text};
+  --bg-color :${({ theme: { background } }) => background}; 
+  --attention-color :${({ theme: { attention } }) => attention}; 
 	padding-bottom: 1em;
-	border-bottom: solid 2px  var(--text-color);
+	margin: 1em 0;
+	position:relative;
 	text-transform: uppercase;
+	::after{
+		content: ' ';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width:100%;
+		height: 5px;
+		background-image: linear-gradient(to right,var(--attention-color), var(--bg-color));
+	}
 `
 
 const Line = styled.p`
@@ -39,11 +46,9 @@ const CallToAction = styled.span`
 	text-transform: uppercase;
 `
 const Wrapper = styled.div`
-	--bg-color :${({ theme: { neutral } }) => neutral}75;
 	--text-color :${({ theme: { text } }) => text};
-
+	padding:1em;
 	color:var(--text-color);
-	background: var(--bg-color);
 `
 
 export default function Showcase(props) {

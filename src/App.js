@@ -22,11 +22,34 @@ library.add(fab, fas)
 
 const GlobalStyle = styled(NormalStyle)`
 *{
+  --text-color :${({ theme: { text } }) => text}; 
+  --bg-color :${({ theme: { background } }) => background}; 
+  --action-color :${({ theme: { action } }) => action}; 
+  --neutral-color :${({ theme: { neutral } }) => neutral}; 
+  --attention-color :${({ theme: { attention } }) => attention}; 
+	--gradient :	linear-gradient(to right,var(--attention-color), var(--bg-color));
+
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 12pt;
-	color: #${({ theme: { text } }) => text};
+	color: var(--text-color);
+
+  ::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color:var(--bg-color);
+    padding:10px
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--neutral-color); 
+    border-radius:5px;
+  ::-webkit-scrollbar-thumb:hover {
+  background: var(--text-color); 
+  } 
+}
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -51,6 +74,7 @@ function createMapping(obj, func) {
 
 const Wrapper = styled.div`
 padding: 0 1.5em;
+	background-color: ${({ theme: { background } }) => background};
 `
 
 
@@ -59,7 +83,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      colorPalette: ColorPalettes[0],
+      colorPalette: ColorPalettes[1],
     }
   }
 
@@ -83,9 +107,9 @@ class App extends Component {
               </Routes>
             </Section>
             <Section title="contact me" id="">
-              <BackgroundVideo playsInline autoPlay muted loop>
+              {/* <BackgroundVideo playsInline autoPlay muted loop>
                 <source src={video} type="video/webm" />
-              </BackgroundVideo>
+              </BackgroundVideo> */}
               <GetInTouch ></GetInTouch>
             </Section>
           </Wrapper>
