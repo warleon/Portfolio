@@ -19,11 +19,19 @@ const Subtitle = styled.h3`
 `
 
 const Line = styled.p`
+	--text-color :${({ theme: { text } }) => text};
+	color: var(--text-color)
 `
 
 const Section = styled.div`
+	--text-color :${({ theme: { text } }) => text};
+	color: var(--text-color)
 `
 
+const Span = styled.span`
+	--text-color :${({ theme: { action } }) => action};
+	color:var(--text-color);
+`
 const CallToAction = styled.span`
 	--text-color :${({ theme: { action } }) => action};
 	color:var(--text-color);
@@ -74,9 +82,11 @@ export default function Showcase(props) {
 			</Section>
 			<Section>
 				<Subtitle >source code</Subtitle>
-				<Link to={project.source[0]} >
-					<FontAwesomeIcon icon="fa-brands fa-github" style={{ color: props.theme.action }} />
-					<CallToAction >{project.source[1]}</CallToAction>
+				<Link to={project.source[0]} target="_blank" >
+					<Span>
+						<FontAwesomeIcon icon="fa-brands fa-github" />
+						<CallToAction >{project.source[1]}</CallToAction>
+					</Span>
 				</Link>
 			</Section>
 		</Wrapper>
