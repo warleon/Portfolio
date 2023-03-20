@@ -104,5 +104,61 @@ const projects = {
     ],
 
   },
+  // generalExtendibleHashTable: {
+  //   url: "/projects/generalExtendibleHashTable",
+  //   img: placeholder,
+  //   imgText: "",
+  //   title: "",
+  //   description: "",
+  //   call: "learn more",
+  //   motivation: "",
+  //   longDescription: "",
+  //   usage: "",
+  //   source: ["https://github.com/warleon/db2-proyecto1#extendible-hash", "warleon/db2-proyecto1"],
+  //   tech: [
+  //   ],
+  // },
+  // imageSearch: {
+  //   url: "/projects/imageSearch",
+  //   img: placeholder,
+  //   imgText: "",
+  //   title: "",
+  //   description: "",
+  //   call: "learn more",
+  //   motivation: "",
+  //   longDescription: "",
+  //   usage: "",
+  //   source: ["https://github.com/warleon/db2-proyecto3", "warleon/db2-proyecto3"],
+  //   tech: [
+  //   ],
+  // },
+  // webScrapper: {
+  //   url: "/projects/webScrapper",
+  //   img: placeholder,
+  //   imgText: "",
+  //   title: "",
+  //   description: "",
+  //   call: "learn more",
+  //   motivation: "",
+  //   longDescription: "",
+  //   usage: "",
+  //   source: ["https://github.com/davento/hackathon-movistar-2020", "davento/hackathon-movistar-2020"],
+  //   tech: [
+  //   ],
+  // },
 }
+// PROJECT_NAME: {
+//   url: "/projects/PROJECT_NAME",
+//   img: placeholder,
+//   imgText: "",
+//   title: "",
+//   description: "",
+//   call: "learn more",
+//   motivation: "",
+//   longDescription: "",
+//   usage: "",
+//   source: ["https://github.com/warleon/PROJECT_NAME", "warleon/PROJECT_NAME"],
+//   tech: [
+//   ],
+// },
 export default projects
