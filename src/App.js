@@ -106,15 +106,13 @@ class App extends Component {
                 }
               </Roulette>
             </Section>
-            <Section title="working experience">
-            </Section>
-            <Section title="skills">
+            <Section title="experience">
             </Section>
             <Section title="contact me" id="">
               {/* <BackgroundVideo playsInline autoPlay muted loop>
                 <source src={video} type="video/webm" />
               </BackgroundVideo> */}
-              <GetInTouch SocialNetworks={SocialNetworks} ></GetInTouch>
+              <GetInTouch socialNetworks={SocialNetworks} ></GetInTouch>
             </Section>
           </Wrapper>
         </ThemeProvider>

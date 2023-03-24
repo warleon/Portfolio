@@ -35,7 +35,7 @@ export default function GetInTouch(props) {
 	return (
 		<Wrapper>
 			<Form {...formProps} />
-			<IconList {...props.SocialNetworks} />
+			<IconList items={props.socialNetworks} />
 		</Wrapper>
 	);
 }
