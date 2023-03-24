@@ -50,9 +50,10 @@ function Roulette(props) {
 	)
 
 	return (
-		<Wrapper {...props} ref={wrapper} onScroll={handleScroll}>
+		// <Wrapper {...props} ref={wrapper} onScroll={handleScroll}>
+		<Wrapper {...props}>
 			{renderChildren()}
-			{renderChildren()}
+			{/* {renderChildren()} */}
 		</Wrapper >
 	)
 

@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import Title from './title';
 
 
@@ -46,19 +46,19 @@ export default function Card(props) {
 
 	return (
 		<Container  >
-			<Link to={props.url}>
+			{/* <Link to={props.url}>
 				<Image >
 					<img src={props.img} alt={props.imgtext} />
 				</Image>
-			</Link>
+			</Link> */}
 			<Title>{props.title}</Title>
 			<Content>{props.description}</Content>
-			<Link to={props.url}>
+			<HashLink smooth to={props.url}>
 				<BottomLink >
 					<FontAwesomeIcon icon="fas fa-chevron-circle-right" />
 					<CallToAction>{props.call}</CallToAction>
 				</BottomLink>
-			</Link>
+			</HashLink>
 		</Container>
 	);
 }

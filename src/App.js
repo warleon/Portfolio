@@ -93,17 +93,17 @@ class App extends Component {
           <GlobalStyle />
 
           <Wrapper>
-            <Section title="my projects" id="">
-              <Roulette>
-                {
-                  createMapping(projects, (id, card, i) => (
-                    <Card {...card} key={i} />
-                  ))
-                }
-              </Roulette>
+            <Section title="my projects" id="projects">
               <Routes>
                 <Route path="projects/:projectId" element={<Showcase />} />
               </Routes>
+              <Roulette>
+                {
+                  createMapping(projects, (id, card, i) => (
+                    <Card {...card} url={card.url + "#projects"} key={i} />
+                  ))
+                }
+              </Roulette>
             </Section>
             <Section title="working experience">
             </Section>
