@@ -79,8 +79,7 @@ const projects = {
       "Cmake",
       "JSON",
       "SVG",
-      "Google",
-      "Test",
+      "Google Test",
     ],
 
   },

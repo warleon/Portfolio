@@ -17,6 +17,7 @@ import Showcase from './Components/showcase';
 import video from './Assets/berserk.webm'
 import BackgroundVideo from './Components/backgroundVIdeo';
 import ColorPalettes from './Assets/colorPalette';
+import SocialNetworks from './data/contact';
 
 library.add(fab, fas)
 
@@ -113,7 +114,7 @@ class App extends Component {
               {/* <BackgroundVideo playsInline autoPlay muted loop>
                 <source src={video} type="video/webm" />
               </BackgroundVideo> */}
-              <GetInTouch ></GetInTouch>
+              <GetInTouch SocialNetworks={SocialNetworks} ></GetInTouch>
             </Section>
           </Wrapper>
         </ThemeProvider>

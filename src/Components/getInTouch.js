@@ -32,44 +32,10 @@ export default function GetInTouch(props) {
 			},
 		]
 	}
-	const contactListProps = {
-		items: [
-			{
-				icon: "fa-brands fa-github",
-				url: "https://github.com/warleon",
-				text: "warleon"
-			},
-			{
-				icon: "fa-brands fa-github",
-				url: "https://github.com/warleon",
-				text: "warleon"
-			},
-			{
-				icon: "fa-brands fa-github",
-				url: "https://github.com/warleon",
-				text: "warleon"
-			},
-			{
-				icon: "fa-brands fa-github",
-				url: "https://github.com/warleon",
-				text: "warleon"
-			},
-			{
-				icon: "fa-brands fa-github",
-				url: "https://github.com/warleon",
-				text: "warleon"
-			},
-			{
-				icon: "fa-brands fa-github",
-				url: "https://github.com/warleon",
-				text: "warleon"
-			},
-		]
-	}
 	return (
 		<Wrapper>
 			<Form {...formProps} />
-			<IconList {...contactListProps} />
+			<IconList {...props.SocialNetworks} />
 		</Wrapper>
 	);
 }
