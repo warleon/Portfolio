@@ -94,7 +94,7 @@ class App extends Component {
           <GlobalStyle />
 
           <Wrapper>
-            <Section title="my projects" id="projects">
+            <Section title="projects" id="projects">
               <Routes>
                 <Route path="projects/:projectId" element={<Showcase />} />
               </Routes>
@@ -108,7 +108,7 @@ class App extends Component {
             </Section>
             <Section title="experience">
             </Section>
-            <Section title="contact me" id="">
+            <Section title="contact" id="">
               {/* <BackgroundVideo playsInline autoPlay muted loop>
                 <source src={video} type="video/webm" />
               </BackgroundVideo> */}

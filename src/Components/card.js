@@ -6,13 +6,7 @@ import Title from './title';
 
 
 const Image = styled.div`
-	margin-bottom: 1.5em;
-	img {
-		border-radius: 5px 5px 0 0;
-    width: 100%;
-		aspect-ratio: 16 / 9;
-		object-fit:cover;
-	}
+	margin: 0 0 1.5em 1em;
 `
 
 const CallToAction = styled.span`
@@ -20,20 +14,20 @@ const CallToAction = styled.span`
 	text-transform: uppercase;
 `
 const Content = styled.p`
-	margin: 1em ;
 	height: 6em;
 `
 
 const BottomLink = styled.div`
 	--text-color :${({ theme: { action } }) => action};
 	display: block;
-	margin: 0 1em 1em 1em;
+	margin: 0 0 1em 0;
 	color:var(--text-color);
 `
 const Container = styled.div`
 	--bg-color :${({ theme: { neutral } }) => neutral}75;
 	--text-color :${({ theme: { text } }) => text};
 
+	padding: 0 1em ;
 	width:20em;
 	box-sizing: border-box;
 	border-radius: 5px;
@@ -46,11 +40,6 @@ export default function Card(props) {
 
 	return (
 		<Container  >
-			{/* <Link to={props.url}>
-				<Image >
-					<img src={props.img} alt={props.imgtext} />
-				</Image>
-			</Link> */}
 			<Title>{props.title}</Title>
 			<Content>{props.description}</Content>
 			<HashLink smooth to={props.url}>
