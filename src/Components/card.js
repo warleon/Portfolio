@@ -14,7 +14,7 @@ const CallToAction = styled.span`
 	text-transform: uppercase;
 `
 const Content = styled.p`
-	height: 6em;
+	height: 10em;
 `
 
 const BottomLink = styled.div`
