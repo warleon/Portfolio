@@ -7,17 +7,12 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 
 import styled, { ThemeProvider } from 'styled-components';
 import NormalStyle from './NormalStyle'
-import Section from './Components/section';
-import Card from './Components/card';
-import Roulette from './Components/roulette';
-import GetInTouch from './Components/getInTouch'
-import projects from './data/projects';
-import Showcase from './Components/showcase';
 
-import video from './Assets/berserk.webm'
-import BackgroundVideo from './Components/backgroundVIdeo';
 import ColorPalettes from './Assets/colorPalette';
-import SocialNetworks from './data/contact';
+
+import ProjectPage from './Pages/project';
+import MainPage from './Pages/main';
+// import Default404 from "react-static/lib/browser/components/Default404"
 
 library.add(fab, fas)
 
@@ -59,24 +54,7 @@ h1, h2, h3, h4, h5, h6 {
 &::-webkit-scrollbar-thumb:hover {
 background: var(--text-color); 
 } 
-
 `
-function createMapping(obj, func) {
-  let arr = Array()
-  let i = 0
-  for (const [key, value] of Object.entries(obj)) {
-    arr.push(func(key, value, i))
-    i++
-  }
-  return arr
-}
-
-
-const Wrapper = styled.div`
-padding: 0 1.5em;
-	background-color: ${({ theme: { background } }) => background};
-`
-
 
 
 class App extends Component {
@@ -92,29 +70,11 @@ class App extends Component {
       <Fragment >
         <ThemeProvider theme={this.state.colorPalette}>
           <GlobalStyle />
-
-          <Wrapper>
-            <Section title="projects" id="projects">
-              <Routes>
-                <Route path="projects/:projectId" element={<Showcase />} />
-              </Routes>
-              <Roulette>
-                {
-                  createMapping(projects, (id, card, i) => (
-                    <Card {...card} url={card.url + "#projects"} key={i} />
-                  ))
-                }
-              </Roulette>
-            </Section>
-            <Section title="experience">
-            </Section>
-            <Section title="contact" id="">
-              {/* <BackgroundVideo playsInline autoPlay muted loop>
-                <source src={video} type="video/webm" />
-              </BackgroundVideo> */}
-              <GetInTouch socialNetworks={SocialNetworks} ></GetInTouch>
-            </Section>
-          </Wrapper>
+          <Routes>
+            <Route path="projects/:projectId" element={<ProjectPage />} />
+            <Route path="/" element={<MainPage />} />
+            {/* <Route path="*" element={<Default404 />} /> */}
+          </Routes>
         </ThemeProvider>
       </Fragment>
     )
