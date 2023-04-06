@@ -7785,7 +7785,7 @@
     "chalk" "^2.4.2"
     "fs-extra" "^8.1.0"
 
-"react-static-plugin-source-filesystem@^7.5.1":
+"react-static-plugin-source-filesystem@^7.6.2":
   "integrity" "sha512-AavcsuZvjnmKNSoZYAJlPUN1RJ9yGQ7a4qs7Jy1YNnJ2HvnH+m9ruMxX/6Hi2rsXSIKKGVKfu/6IrqtGLnCJ8g=="
   "resolved" "https://registry.npmjs.org/react-static-plugin-source-filesystem/-/react-static-plugin-source-filesystem-7.6.2.tgz"
   "version" "7.6.2"

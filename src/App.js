@@ -12,7 +12,6 @@ import ColorPalettes from './Assets/colorPalette';
 
 import ProjectPage from './Pages/project';
 import MainPage from './Pages/main';
-// import Default404 from "react-static/lib/browser/components/Default404"
 
 library.add(fab, fas);
 
@@ -77,7 +76,6 @@ class App extends Component {
           <Routes>
             <Route path="projects/:projectId" element={<ProjectPage />} />
             <Route path="/" element={<MainPage />} />
-            {/* <Route path="*" element={<Default404 />} /> */}
           </Routes>
         </ThemeProvider>
       </Fragment>

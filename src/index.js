@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 
 // Your top level component
@@ -21,9 +21,9 @@ if (typeof document !== 'undefined') {
   const render = Comp => {
     renderMethod(
       <AppContainer>
-        <BrowserRouter>
+        <HashRouter>
           <Comp />
-        </BrowserRouter>
+        </HashRouter>
       </AppContainer>,
       target
     )
