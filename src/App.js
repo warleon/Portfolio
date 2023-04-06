@@ -1,9 +1,9 @@
-import React, { Component, Fragment } from 'react'
-import { Route, Routes } from 'react-router-dom';
+import React, { Component, Fragment } from "react";
+import { Route, Routes } from "react-router-dom";
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fab } from '@fortawesome/free-brands-svg-icons'
-import { fas } from '@fortawesome/free-solid-svg-icons';
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import { fas } from "@fortawesome/free-solid-svg-icons";
 
 import styled, { ThemeProvider } from 'styled-components';
 import NormalStyle from './NormalStyle'
@@ -14,16 +14,20 @@ import ProjectPage from './Pages/project';
 import MainPage from './Pages/main';
 // import Default404 from "react-static/lib/browser/components/Default404"
 
-library.add(fab, fas)
+library.add(fab, fas);
 
 const GlobalStyle = styled(NormalStyle)`
-*{
-  --text-color :${({ theme: { text } }) => text}; 
-  --bg-color :${({ theme: { background } }) => background}; 
-  --action-color :${({ theme: { action } }) => action}; 
-  --neutral-color :${({ theme: { neutral } }) => neutral}; 
-  --attention-color :${({ theme: { attention } }) => attention}; 
-	--gradient :	linear-gradient(to right,var(--attention-color), var(--bg-color));
+  * {
+    --text-color: ${({ theme: { text } }) => text};
+    --bg-color: ${({ theme: { background } }) => background};
+    --action-color: ${({ theme: { action } }) => action};
+    --neutral-color: ${({ theme: { neutral } }) => neutral};
+    --attention-color: ${({ theme: { attention } }) => attention};
+    --gradient: linear-gradient(
+      to right,
+      var(--attention-color),
+      var(--bg-color)
+    );
 
   margin: 0;
   padding: 0;
@@ -59,15 +63,15 @@ background: var(--text-color);
 
 class App extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       colorPalette: ColorPalettes[1],
-    }
+    };
   }
 
   render() {
     return (
-      <Fragment >
+      <Fragment>
         <ThemeProvider theme={this.state.colorPalette}>
           <GlobalStyle />
           <Routes>
@@ -77,8 +81,8 @@ class App extends Component {
           </Routes>
         </ThemeProvider>
       </Fragment>
-    )
+    );
   }
 }
 
-export default App
+export default App;
