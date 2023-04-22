@@ -23,14 +23,14 @@ export default function ProjectPage() {
 					}
 				</Roulette>
 			</Section>
-			<Section title="experience">
+			{/* <Section title="experience">
 			</Section>
 			<Section title="contact" id="">
-				{/* <BackgroundVideo playsInline autoPlay muted loop>
+				 <BackgroundVideo playsInline autoPlay muted loop>
                 <source src={video} type="video/webm" />
-              </BackgroundVideo> */}
+              </BackgroundVideo> 
 				<GetInTouch socialNetworks={SocialNetworks} ></GetInTouch>
-			</Section>
+			</Section> */}
 		</Wrapper>
 	)
 }
