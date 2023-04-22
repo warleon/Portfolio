@@ -11,8 +11,7 @@ const Wrapper = styled.div`
 export default function GetInTouch(props) {
 	const formProps = {
 		method: "post",
-		// action: "https://formsubmit.co/ad445c50c346c2a38d4d79094ff96bb9",
-		action: "https://formsubmit.co/warleon123@gmail.com",
+		action: "https://formsubmit.co/ad445c50c346c2a38d4d79094ff96bb9",
 		sendMessage: "Send Message",
 		fields: [
 			{
