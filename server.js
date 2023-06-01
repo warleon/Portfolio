@@ -6,7 +6,7 @@ const path = require('path');
 const certificate = '/etc/letsencrypt/live/tan.gozu.lat/fullchain.pem'
 const certificate_key = '/etc/letsencrypt/live/tan.gozu.lat/privkey.pem'
 const app = express()
-const port = 3000
+const port = 3001// port in production 
 
 
 app.use(express.static(path.join(__dirname, 'build')));
