@@ -21,6 +21,6 @@ const server = https.createServer({
 	cert: fs.readFileSync(certificate, 'utf8')
 }, app);
 
-await server.listen(port, () => {
+server.listen(port, () => {
 	console.log(`Example app listening at http://localhost:${port}`)
 });
