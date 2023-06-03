@@ -64,7 +64,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      colorPalette: ColorPalettes[1],
+      colorPalette: ColorPalettes[4],
     };
   }
 
